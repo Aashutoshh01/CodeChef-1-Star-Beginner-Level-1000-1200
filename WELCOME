@@ -1,0 +1,8 @@
+$include<iostream>
+using namespace std;
+int main(){
+
+  cout<<"WELCOME TO CODECHEF 1* BEGINNER LEVEL<<ENDL:
+
+
+}

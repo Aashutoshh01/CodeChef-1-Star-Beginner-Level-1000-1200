@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	long int t;
+	cin>>t;
+	while(t--){
+	    long int a,b,k;
+	    cin>>a>>b>>k;
+	    int count=0;
+	    long int temp=a+b;
+	    while(temp>=k){
+	        count++;
+	        temp=temp-k;
+	    }
+	    if(count%2==0){
+	        cout<<"CHEF"<<endl;
+	    }
+	    else{
+	        cout<<"COOK"<<endl;
+	    }
+	}
+	return 0;
+}

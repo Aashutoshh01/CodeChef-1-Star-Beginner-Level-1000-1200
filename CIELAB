@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int a,b;
+	cin>>a>>b;
+	int flag=a-b;
+	if((a-b)/10==0){
+	    if(a-b==0 || a-b==1){
+	        cout<<"2"<<endl;
+	    }
+	    else{
+	        cout<<a-b-1<<endl;
+	    }
+	}
+	else{
+    	int temp=9-flag%10;
+    	flag=flag/10;
+    	flag=flag*10+temp;
+    	cout<<flag;
+	}
+	return 0;
+}

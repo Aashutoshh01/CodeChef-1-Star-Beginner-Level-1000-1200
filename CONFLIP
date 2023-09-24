@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int g;
+	    cin>>g;
+	    while(g--){
+	        int n,i,q;
+	        cin>>i>>n>>q;
+	        if(n%2==0){
+	            cout<<n/2<<endl;
+	        }
+	        else{
+	            if(i==1){
+	                if(q==1){
+	                    cout<<n/2<<endl;
+	                }
+	                else if(q==2){
+	                    cout<<1+n/2<<endl;
+	                }
+	            }
+	            else{
+	                if(i==2){
+	                    if(q==1){
+	                        cout<<1+n/2<<endl;
+	                    }
+	                    else if(q==2){
+	                        cout<<n/2<<endl;
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+	return 0;
+}

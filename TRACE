@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int a[n][n];
+	    int b[2*n-1]={0};
+	    int k=0,p=0,q=0,temp,max=0;
+	    for(int i=0;i<n;i++){
+	        for(int j=0;j<n;j++){
+	            cin>>a[i][j];
+	        }
+	    }
+	    for(int i=0;i<n;i++){
+	        temp=0;
+	        p=i;
+	        q=0;
+	        while(p<n && q<n){
+	            temp+=a[p][q];
+	            p++;
+	            q++;
+	        }
+	        b[k]=temp;
+	        k++;
+	    }
+	    for(int i=1;i<n;i++){
+	        temp=0;
+	        p=0;q=i;
+	        while(p<n && q<n){
+	            temp+=a[p][q];
+	            p++;
+	            q++;
+	        }
+	        b[k]=temp;
+	        k++;
+	    }
+	    for(int i=0;i<2*n-1;i++){
+	        if(b[i]>max){
+	            max=b[i];
+	        }
+	    }
+	    cout<<max<<endl;
+	}
+	return 0;
+}

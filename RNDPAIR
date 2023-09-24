@@ -1,0 +1,49 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int a[n];
+	    int k=0,l=0,p=1,q=1;
+	    for(int i=0;i<n;i++){
+	        cin>>a[i];
+	    }
+	    for(int i=0;i<n-1;i++){
+	        for(int j=i+1;j<n;j++){
+	            if(a[j]>a[i]){
+	                int temp;
+	                temp=a[i];
+	                a[i]=a[j];
+	                a[j]=temp;
+	            }
+	        }
+	    }
+	    while(a[k+1]==a[k]){
+	        p++;
+	        k++;
+	    }
+	    l=k+1;
+	    while(a[l+1]==a[l]){
+	        q++;
+	        l++;
+	    }
+	    if(p==n){
+	        cout<<"1"<<endl;
+	    }
+	    else{
+	        if(p==1){
+	            cout<<fixed << setprecision(8)<<(float)p*q/((n-1)*(n)/2)<<endl;
+	        }
+	        else{
+	            cout<<fixed << setprecision(8)<<(float)((p-1)*(p)/2)/((n-1)*(n)/2)<<endl;
+	        }
+	    }
+	}
+	return 0;
+}

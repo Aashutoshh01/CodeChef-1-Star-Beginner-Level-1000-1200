@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,x;
+	    cin>>n>>x;
+	    int h[n];
+	    int max,flag=0;
+	    for(int i=0;i<n;i++){
+	        cin>>h[i];
+	    }
+	    max=h[0];
+	    for(int i=1;i<n;i++){
+	        if(h[i]>max){
+	            max=h[i];
+	        }
+	    }
+	    for(int i=0;i<n;i++){
+	        if(h[i]%x==0){
+	            flag+=h[i]/x;
+	        }
+	        else{
+	            flag+=(1+h[i]/x);
+	        }
+	    }
+	    if(flag<=max){
+	        cout<<flag<<endl;
+	    }
+	    else{
+	        cout<<max<<endl;
+	    }
+	}
+	return 0;
+}

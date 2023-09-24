@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,k;
+	    string s;
+	    cin>>n>>k>>s;
+	    if(s[0]=='1'){
+	        s.resize(n+k);
+	        for(int i=n;i<n+k;i++){
+	            s[i]='0';
+	        }
+	        s[n+k]='\0';
+	    }
+	    else if(s[0]=='0'){
+	        s[0]='1';
+	        s.resize(n+k-1);
+	        for(int i=n;i<n+k-1;i++){
+	            s[i]='0';
+	        }
+	        s[n+k-1]='\0';
+	    }
+	    cout<<s<<endl;
+	}
+	return 0;
+}

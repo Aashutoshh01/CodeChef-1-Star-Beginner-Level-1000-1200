@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+
+int call(int n){
+    int temp=0;
+    int flag=0;
+    if(n>=97 && n<=109){
+        for(int i=97;i<=109;i++){
+            if(i==n){
+                flag=n+26-(2*temp+1);
+                return flag;
+            }
+            temp++;
+        }
+    }
+    else if(n>109 && n<=122){
+        for(int i=122;i>=110;i--){
+            if(i==n){
+                flag=n-26+(2*temp+1);
+                return flag;
+            }
+            temp++;
+        }
+        
+    }
+}
+
+
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    string s;
+	    cin>>n>>s;
+	    int p;
+	    int q;
+	    for(int i=0;s[i]!='\0';i++){
+	            s[i]=call(s[i]);
+	    }
+	    if(n%2==0){
+	        for(int i=0;i<n;i=i+2){
+	            char temp;
+	            temp=s[i];
+	            s[i]=s[i+1];
+	            s[i+1]=temp;
+	        }
+	    }
+	    else{
+	        for(int i=0;i<n-1;i=i+2){
+	            char temp;
+	            temp=s[i];
+	            s[i]=s[i+1];
+	            s[i+1]=temp;
+	        }
+	    }
+	    cout<<s<<endl;
+	}
+	return 0;
+}

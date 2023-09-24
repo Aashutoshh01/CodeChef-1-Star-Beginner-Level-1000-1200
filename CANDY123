@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int a,b;
+	    cin>>a>>b;
+	    int p=0,q=0,counter=1,flag=-1;
+	    while(p<=a && q<=b){
+	        if(counter%2!=0){
+	            if(p+counter<=a){
+	                p+=counter;
+	            }
+	            else{
+	                cout<<"Bob"<<endl;
+	                break;
+	            }
+	        }
+	        else{
+	            if(q+counter<=b){
+	                q+=counter;
+	            }
+	            else{
+	                cout<<"Limak"<<endl;
+	                break;
+	            }
+	        }
+	        counter++;
+	    }
+	    
+	}
+	return 0;
+}

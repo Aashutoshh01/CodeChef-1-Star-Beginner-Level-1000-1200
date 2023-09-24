@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int a,b,c;
+	    cin>>a>>b>>c;
+	    int sum=0;
+	    while(a>0 && c>0){
+	        if(c>=b){
+	            sum+=b*b;
+	            c-=b;
+	        }
+	        else{
+	            sum+=c*c;
+	            c=0;
+	        }
+	        a--;
+	    }
+	    cout<<sum<<endl;
+	}
+	return 0;
+}

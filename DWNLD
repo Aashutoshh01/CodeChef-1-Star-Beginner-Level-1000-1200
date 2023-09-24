@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,k;
+	    cin>>n>>k;
+	    int t[n],d[n];
+	    int amount=0,flag=0;
+	    int temp=k;
+	    for(int i=0;i<n;i++){
+	        cin>>t[i]>>d[i];
+	    }
+	    for(int i=0;i<n;i++){
+	        amount+=t[i]*d[i];
+	    }
+	    for(int i=0;i<n;i++){
+	        if(temp<=t[i]){
+	            flag+=temp*d[i];
+	            break;
+	        }
+	        else{
+	            flag+=t[i]*d[i];
+	            temp=temp-t[i];
+	        }
+	    }
+	    cout<<amount-flag<<endl;
+	}
+	return 0;
+}

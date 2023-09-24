@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	long int t;
+	cin>>t;
+	while(t--){
+	    long int n;
+	    string s;
+	    cin>>n>>s;
+	    long int flag=0;
+	    long int count=0;
+	    for(long int i=0;s[i]!='\0';i++){
+	        if(s[i]=='1'){
+	            flag++;
+	            while(s[i+1]=='1'){
+	                i++;
+	            }
+	        }
+	    }
+	    for(long int i=n-1;i>=0;i--){
+	        if(s[i]=='1'){
+	            count++;
+	            while(s[i-1]=='1'){
+	                i--;
+	            }
+	        }
+	        else{
+	            break;
+	        }
+	    }
+	    cout<<flag-count<<endl;
+	}
+	return 0;
+}

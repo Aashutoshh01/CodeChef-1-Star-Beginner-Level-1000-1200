@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	long int t;
+	cin>>t;
+	while(t--){
+	    long int n;
+	    cin>>n;
+	    if(n<21){
+	        cout<<"NO"<<endl;
+	    }
+	    else{
+	        cout<<"YES"<<endl;
+	    }
+	}
+	return 0;
+}

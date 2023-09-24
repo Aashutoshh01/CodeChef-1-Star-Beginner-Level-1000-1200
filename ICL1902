@@ -1,0 +1,25 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int temp=1;
+	    int count=0;
+	    while(n>0){
+	        temp=1;
+	        while(pow(temp+1,2)<=n){
+	            temp++;
+	        }
+	        n=n-pow(temp,2);
+	        count++;
+	    }
+	    cout<<count<<endl;
+	}
+	return 0;
+}

@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    string s;
+	    cin>>n>>s;
+	    int a=0,b=0;
+	    for(int i=0;i<n;i++){
+	        if(s[i]=='R'){
+	            a++;
+	            while(s[i+1]=='R' || s[i+1]=='L'){
+	                i++;
+	            }
+	        }
+	        else if(s[i]=='L'){
+	            a--;
+	            while(s[i+1]=='R' || s[i+1]=='L'){
+	                i++;
+	            }
+	        }
+	        else if(s[i]=='U'){
+	            b++;
+	            while(s[i+1]=='U' || s[i+1]=='D'){
+	                i++;
+	            }
+	        }
+	        else if(s[i]=='D'){
+	            b--;
+	            while(s[i+1]=='U' || s[i+1]=='D'){
+	                i++;
+	            }
+	        }
+	    }
+	    cout<<a<<" "<<b<<endl;
+	}
+	return 0;
+}

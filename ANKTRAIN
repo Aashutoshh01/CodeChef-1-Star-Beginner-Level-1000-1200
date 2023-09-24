@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int a,b;
+	    a=n/8;
+	    b=n%8;
+	    if(b==3){
+	        cout<<8*a+6<<"UB"<<endl;
+	    }
+	    else if(b==2){
+	        cout<<8*a+5<<"MB"<<endl;
+	    }
+	    else if(b==1){
+	        cout<<8*a+4<<"LB"<<endl;
+	    }
+	    else if(b==7){
+	        cout<<8*(a+1)<<"SU"<<endl;
+	    }
+	    else if(b==6){
+	        cout<<8*a+3<<"UB"<<endl;
+	    }
+	    else if(b==5){
+	        cout<<8*a+2<<"MB"<<endl;
+	    }
+	    else if(b==4){
+	        cout<<8*a+1<<"LB"<<endl;
+	    }
+	    else if(b==0){
+	        cout<<8*a-1<<"SL"<<endl;
+	    }
+	}
+	return 0;
+}

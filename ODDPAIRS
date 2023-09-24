@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    long int n;
+	    cin>>n;
+	    long int even=n/2;
+	    long int odd=n-even;
+	    cout<<2*odd*even<<endl;
+	}
+	return 0;
+}

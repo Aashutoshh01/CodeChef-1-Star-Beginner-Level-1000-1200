@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int x,y;
+	    cin>>x>>y;
+	    int flag=1,count;
+	    while(flag>0){
+	        count=0;
+	        for(int i=1;i<=flag+x+y;i++){
+	            if((flag+x+y)%i==0){
+	                count++;
+	            }
+	        }
+	        if(count==2){
+	            break;
+	        }
+	        else{
+	            flag++;
+	        }
+	    }
+	    cout<<flag<<endl;
+	}
+	return 0;
+}

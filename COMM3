@@ -1,0 +1,32 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    float n,a,b,c,d,e,f;
+	    cin>>n>>a>>b>>c>>d>>e>>f;
+	    float p,q,r;
+	    p=(float)sqrt(pow(a-c,2)+pow(b-d,2));
+	    q=(float)sqrt(pow(a-e,2)+pow(b-f,2));
+	    r=(float)sqrt(pow(c-e,2)+pow(d-f,2));
+	    if(p<=n && q<=n){
+	        cout<<"yes"<<endl;
+	    }
+	    else if(p<=n && q>n || p>n && q<=n){
+	        if(r<=n){
+	            cout<<"yes"<<endl;
+	        }
+	        else{
+	            cout<<"no"<<endl;
+	        }
+	    }
+	    else if(p>n && q>n){
+	        cout<<"no"<<endl;
+	    }
+	}
+	return 0;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int a=0,b=0;
+	    int temp1=n,temp2=n+1;
+	    while(temp1>0){
+	        a+=temp1%10;
+	        temp1=temp1/10;
+	    }
+	    while(temp2>0){
+	        b+=temp2%10;
+	        temp2=temp2/10;
+	    }
+	    if(a%2==0 && b%2!=0){
+	        cout<<n+1<<endl;
+	    }
+	    else if(a%2!=0 && b%2==0){
+	        cout<<n+1<<endl;
+	    }
+	    else if(a%2==0 && b%2==0){
+	        cout<<n+2<<endl;
+	    }
+	    else if(a%2!=0 && b%2!=0){
+	        cout<<n+2<<endl;
+	    }
+	}
+	return 0;
+}

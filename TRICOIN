@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int count=1;
+	    int sum=0;
+	    int row=0;
+	    while(sum<=n){
+	        sum+=count;
+	        count++;
+	        row++;
+	    }
+	    cout<<row-1<<endl;
+	}
+	return 0;
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int call(int a,int b,int c,int d){
+    if((float)a/b==(float)c/d){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+int main() {
+	// your code goes here
+	int a,b,c,d;
+	cin>>a>>b>>c>>d;
+	int flag=call(a,b,c,d)+call(a,b,d,c)+call(a,c,b,d)+call(a,c,d,b)+call(a,d,b,c)+call(a,d,c,b);
+	if(flag>0){
+	    cout<<"Possible"<<endl;
+	}
+	else{
+	    cout<<"Impossible"<<endl;
+	}
+	return 0;
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,x,s;
+	    cin>>n>>x>>s;
+	    int a[2*s];
+	    int flag=x;
+	    for(int i=0;i<2*s;i++){
+	        cin>>a[i];
+	    }
+	    for(int i=0;i<2*s;i=i+2){
+	        if(a[i]==flag){
+	            int temp;
+	            temp=flag;
+	            flag=a[i+1];
+	            a[i+1]=temp;
+	        }
+	        else if(a[i+1]==flag){
+	            int temp;
+	            temp=flag;
+	            flag=a[i];
+	            a[i]=temp;
+	        }
+	    }
+	    cout<<flag<<endl;
+	}
+	return 0;
+}

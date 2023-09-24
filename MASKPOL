@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int min(int a,int b){
+    if(a<=b){
+        return a;
+    }
+    else{
+        return b;
+    }
+}
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,a;
+	    cin>>n>>a;
+	    int flag=min(a,n-a);
+	    cout<<flag<<endl;
+	}
+	return 0;
+}

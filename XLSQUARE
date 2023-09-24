@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    long int n,a;
+	    cin>>n>>a;
+	    long int flag=1;
+	    while(n/(flag*flag)>0){
+	        flag++;
+	    }
+	    cout<<(flag-1)*a<<endl;
+	}
+	return 0;
+}

@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int a[n];
+	    int flag,temp;
+	    for(int i=0;i<n;i++){
+	        cin>>a[i];
+	    }
+	    if(a[0]==1 && a[n-1]==n){
+	        cout<<"0"<<endl;
+	    }
+	    else if(a[0]==1 && a[n-1]!=n){
+	        for(int i=0;i<n;i++){
+	            if(a[i]==n){
+	                flag=i;
+	                break;
+	            }
+	        }
+	        cout<<n-1-flag<<endl;
+	    }
+	    else if(a[0]!=1 && a[n-1]==n){
+	        for(int i=0;i<n;i++){
+	            if(a[i]==1){
+	                temp=i;
+	                break;
+	            }
+	        }
+	        cout<<temp<<endl;
+	    }
+	    else if(a[0]!=1 && a[n-1]!=n){
+	        for(int i=0;i<n;i++){
+	            if(a[i]==1){
+	                temp=i;
+	            }
+	            else if(a[i]==n){
+	                flag=i;
+	            }
+	        }
+	        if(temp<flag){
+	            cout<<temp+n-1-flag<<endl;
+	        }
+	        else if(temp>flag){
+	            cout<<temp+n-1-flag-1<<endl;
+	        }
+	    }
+	    
+	}
+	return 0;
+}

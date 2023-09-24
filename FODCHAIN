@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int e,k;
+	    cin>>e>>k;
+	    int count=0;
+	    while(e/k!=0){
+	        count++;
+	        e=e/k;
+	    }
+	    cout<<1+count<<endl;
+	}
+	return 0;
+}

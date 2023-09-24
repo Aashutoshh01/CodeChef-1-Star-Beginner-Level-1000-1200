@@ -1,0 +1,22 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    float n;
+	    cin>>n;
+	    float a=pow(0.143*n,n);
+	    int b=pow(0.143*n,n);
+	    if(a-b<0.5){
+	        cout<<b<<endl;
+	    }
+	    else{
+	        cout<<b+1<<endl;
+	    }
+	}
+	return 0;
+}

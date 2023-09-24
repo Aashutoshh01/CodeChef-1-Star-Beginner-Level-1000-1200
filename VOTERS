@@ -1,0 +1,144 @@
+#include <iostream>
+using namespace std;
+
+
+long int call(long int a,long int b,long int c){
+    if(a>=b && a>=c){
+        return a;
+    }
+    else{
+        if(b>=c){
+            return b;
+        }
+        else{
+            return c;
+        }
+    }
+}
+
+
+int main() {
+	// your code goes here
+	long int a,b,c;
+	cin>>a>>b>>c;
+	long int p[a],q[b],r[c];
+	long int count=0;
+	long int i=0,j=0,k=0,l=0;
+	long int max=call(a,b,c);
+	long int z[max]={0};
+	for(long int t=0;t<a;t++){
+	    cin>>p[t];
+	}
+	for(long int t=0;t<b;t++){
+	    cin>>q[t];
+	}
+	for(long int t=0;t<c;t++){
+	    cin>>r[t];
+	}
+	while(i<a && j<b && k<c){
+	    if(p[i]==q[j] && q[j]==r[k]){
+	        z[l]=p[i];
+	        i++;
+	        j++;
+	        k++;
+	        l++;
+	        count++;
+	    }
+	    else if(p[i]==q[j]){
+	        z[l]=p[i];
+	        i++;
+	        j++;
+	        l++;
+	        count++;
+	    }
+	    else if(q[j]==r[k]){
+	        z[l]=q[j];
+	        j++;
+	        k++;
+	        l++;
+	        count++;
+	    }
+	    else if(r[k]==p[i]){
+	        z[l]=r[k];
+	        k++;
+	        i++;
+	        l++;
+	        count++;
+	    }
+	    else{
+	        if(p[i]<q[j] && p[i]<r[k]){
+	            i++;
+	        }
+	        else if(q[j]<p[i] && q[j]<r[k]){
+	            j++;
+	        }
+	        else if(r[k]<p[i] && r[k]<q[j]){
+	            k++;
+	        }
+	    }
+	}
+	if(j<b && k<c){
+	    while(j<b && k<c){
+	        if(q[j]==r[k]){
+	            z[l]=q[j];
+	            j++;
+	            k++;
+	            l++;
+	            count++;
+	        }
+	        else{
+	            if(q[j]<r[k]){
+	                j++;
+	            }
+	            else{
+	                k++;
+	            }
+	        }
+	    }
+	}
+	else if(k<c && i<a){
+	    while(i<a && k<c){
+	        if(p[i]==r[k]){
+	            z[l]=p[i];
+	            i++;
+	            k++;
+	            l++;
+	            count++;
+	        }
+	        else{
+	            if(p[i]<r[k]){
+	                i++;
+	            }
+	            else{
+	                k++;
+	            }
+	        }
+	    }
+	}
+	else if(i<a && j<b){
+	    while(i<a && j<b){
+	        if(p[i]==q[j]){
+	            z[l]=p[i];
+	            i++;
+	            j++;
+	            l++;
+	            count++;
+	        }
+	        else{
+	            if(p[i]<q[j]){
+	                i++;
+	            }
+	            else{
+	                j++;
+	            }
+	        }
+	    }
+	}
+	cout<<count<<endl;
+	int m=0;
+	while(z[m]!=0){
+	    cout<<z[m]<<endl;
+	    m++;
+	}
+	return 0;
+}

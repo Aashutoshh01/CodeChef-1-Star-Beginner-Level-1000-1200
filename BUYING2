@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,x;
+	    cin>>n>>x;
+	    int a[n];
+	    int sum=0,temp,flag=1;
+	    for(int i=0;i<n;i++){
+	        cin>>a[i];
+	    }
+	    for(int i=0;i<n;i++){
+	        sum+=a[i];
+	    }
+	    if(sum<x){
+	        cout<<"-1"<<endl;
+	    }
+	    else{
+	        temp=sum/x;
+	        for(int i=0;i<n;i++){
+	            if(temp*x<=sum-a[i]){
+	                flag=0;
+	                break;
+	            }
+	        }
+	        if(flag==1){
+	            cout<<sum/x<<endl;;
+	        }
+	        else if(flag==0){
+	            cout<<"-1"<<endl;
+	        }
+	    }
+	}
+	return 0;
+}

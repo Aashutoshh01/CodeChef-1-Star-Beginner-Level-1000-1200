@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int call(int a,int b){
+    if(a-b<=0){
+        return b-a;
+    }
+    else{
+        return a-b;
+    }
+}
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,m,k;
+	    cin>>n>>m>>k;
+	    if(call(n,m)<=k){
+	        cout<<"0"<<endl;
+	    }
+	    else{
+	        cout<<call(n,m)-k<<endl;
+	    }
+	}
+	return 0;
+}
